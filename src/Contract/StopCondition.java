@@ -1,5 +1,6 @@
 package Contract;
 
 public interface StopCondition<T> {
-    boolean shouldStop(Population<T> population);
+    void reset();
+    boolean shouldRun(Population<T> population);
 }
