@@ -1,14 +1,17 @@
 package Knapsack;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Individual {
 
-    private Set<Item> items = new HashSet<>();
+    public Set<Item> items;
+    public double maxWeight;
 
-    public Individual(Set<Item> items) {
+    public Individual(Set<Item> items, double maxWeight) {
         this.items = items;
+        this.maxWeight = maxWeight;
     }
 
     public double getValue() {
@@ -19,13 +22,32 @@ public class Individual {
         return value;
     }
 
-    public boolean isValid(double maxWeight) {
+    public boolean isValid() {
         double weight = 0;
         for (Item item: items) {
             weight += item.weight;
-            if(weight > maxWeight) return false;
+            if(weight > this.maxWeight) return false;
         }
         return true;
     }
+
+    public String toString() {
+        StringBuilder itemString = new StringBuilder();
+        itemString.append("[");
+        for (Item item: this.items) {
+            itemString.append(item.toString());
+        }
+        itemString.append("]");
+        return "Individual knapsack {" +
+                "Validity=" + isValid() +
+                ", Number of items=" + items.size() +
+                ", Value=" + getValue() +
+                ", Items=" + itemString.toString() +
+                '}';
+    }
+
+//    public Set<Item> getItems() {
+//        return new HashSet<>(this.items);
+//    }
 
 }

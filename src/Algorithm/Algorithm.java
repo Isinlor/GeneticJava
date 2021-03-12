@@ -33,8 +33,11 @@ public class Algorithm<T> {
         reporter.report(population);
         while(stopCondition.shouldRun(population)) {
             population = select.run(population);
+            System.out.print("select " + population.getSize());
             population = crossover.run(population);
+            System.out.print("| crossover " + population.getSize());
             population = mutate.run(population);
+            System.out.print("| mutate " + population.getSize() + "\n");
             reporter.report(population);
         }
         return population;
