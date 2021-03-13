@@ -1,10 +1,12 @@
 package Knapsack;
 
+import Contract.ScoreReport;
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Individual {
+public class Individual implements ScoreReport {
 
     public Set<Item> items;
     public double maxWeight;
@@ -12,6 +14,10 @@ public class Individual {
     public Individual(Set<Item> items, double maxWeight) {
         this.items = items;
         this.maxWeight = maxWeight;
+    }
+
+    public double getScore() {
+        return getValue();
     }
 
     public double getValue() {

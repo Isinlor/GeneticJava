@@ -1,8 +1,10 @@
 package TSP;
 
+import Contract.ScoreReport;
+
 import java.util.Arrays;
 
-public class Individual {
+public class Individual implements ScoreReport {
 
     private int[] trip;
     private double length;
@@ -10,6 +12,10 @@ public class Individual {
     public Individual(int[] trip, double length) {
         this.trip = trip;
         this.length = length;
+    }
+
+    public double getScore() {
+        return getLength();
     }
 
     public int[] getTrip() {

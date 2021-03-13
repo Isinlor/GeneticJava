@@ -1,4 +1,4 @@
-package Experiment;
+package TSP;
 
 import Algorithm.*;
 import Contract.Passover;

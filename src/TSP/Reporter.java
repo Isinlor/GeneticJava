@@ -8,6 +8,9 @@ import java.util.List;
 
 public class Reporter implements Contract.Reporter<Individual> {
 
+    public void reset() {
+    }
+
     public void report(Population<Individual> population) {
         ArrayList<Individual> individuals = new ArrayList<>(population.getIndividuals());
         individuals.sort(Comparator.comparingDouble((Individual::getLength)));

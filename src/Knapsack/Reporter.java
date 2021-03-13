@@ -8,7 +8,11 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class Reporter implements Contract.Reporter<Individual> {
+
     ArrayList<Double> topScoresPerRound = new ArrayList<>();
+
+    public void reset() {
+    }
 
     public void report(Population<Individual> population) {
         ArrayList<Individual> individuals = new ArrayList<>(population.getIndividuals());
