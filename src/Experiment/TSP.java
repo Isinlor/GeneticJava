@@ -9,7 +9,7 @@ import TSP.*;
 public class TSP {
     public static void main(String[] args) {
 
-        Distances distances = new Distances(100, 0, 10);
+        Distances distances = new Distances(1000, 1, 10);
         Initialize initialize = new Initialize(300, distances);
         Mutate mutate = new Mutate(1, true, distances);
         Select<Individual> selectTopK = new SelectTopK(150);
@@ -20,9 +20,9 @@ public class TSP {
 
         Algorithm<Individual> algorithm = new Algorithm<>(
             initialize,
-            new IterationStopCondition<Individual>(10000),
+            new TimeStopCondition<Individual>(10*1000),
             selectTopK,
-            new Passover<>(),
+            new Crossover(100, true, distances),
             mutate,
             new Reporter()
         );
