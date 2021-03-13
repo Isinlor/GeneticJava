@@ -26,7 +26,7 @@ public class FullExperiment {
         System.out.println("Crossover: " + runTSPExperiment(
             tspPopulationSize, distances, tspStopCondition, tspCrossover
         ));
-        System.out.println("Passover" + runTSPExperiment(
+        System.out.println("Passover: " + runTSPExperiment(
             tspPopulationSize, distances, tspStopCondition, new Passover<>()
         ));
 
@@ -34,7 +34,7 @@ public class FullExperiment {
         System.out.println("Crossover: " + runTSPExperiment(
             tspPopulationSize, distances, tspStopCondition, tspCrossover
         ));
-        System.out.println("Passover" + runTSPExperiment(
+        System.out.println("Passover: " + runTSPExperiment(
             tspPopulationSize, distances, tspStopCondition, new Passover<>()
         ));
 
@@ -53,7 +53,7 @@ public class FullExperiment {
         System.out.println("Crossover: " + runKnapsackExperiment(
             knapsackPopulationSize, maxWeight, knapsackStopCondition, knapsackCrossover
         ));
-        System.out.println("Passover" + runKnapsackExperiment(
+        System.out.println("Passover: " + runKnapsackExperiment(
             knapsackPopulationSize, maxWeight, knapsackStopCondition, new Passover<>()
         ));
 
@@ -61,7 +61,7 @@ public class FullExperiment {
         System.out.println("Crossover: " + runKnapsackExperiment(
             knapsackPopulationSize, maxWeight, knapsackStopCondition, knapsackCrossover
         ));
-        System.out.println("Passover" + runKnapsackExperiment(
+        System.out.println("Passover: " + runKnapsackExperiment(
             knapsackPopulationSize, maxWeight, knapsackStopCondition, new Passover<>()
         ));
 
